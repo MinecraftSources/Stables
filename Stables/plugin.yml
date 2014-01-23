@@ -1,0 +1,24 @@
+name: stables
+main: com.ivalicemud.stables.Stables
+version: 1.6.1
+
+permissions:
+   stables.*:
+      description: Gives access to all permission nodes in Stables
+   stables.admin:
+      description: Provides admin control to Stables
+      default: op
+   stables.max.*:
+      description: The MaxOwner control for Stables
+      default: false
+    
+   
+commands:
+   stables:
+      description: Main commands for the Stables Plugin
+      usage: /stables <options> - use /stables with no argument for a list of options.
+   ro:
+      description: Remove owner of a horse
+      usage: Type /ro, then click the horse you wish to remove the owner of.
+      permission: stables.admin
+      permission-message: You are unable to remove the owner of a horse!
