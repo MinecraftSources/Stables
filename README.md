@@ -1,5 +1,5 @@
 Stables - The Minecraft Plugin
-==============================
+=============================
 
 [For a full description and tutorial, visit the Bukkit Dev page](http://dev.bukkit.org/bukkit-plugins/stables/)
 
