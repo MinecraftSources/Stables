@@ -126,7 +126,7 @@ private WorldGuardPlugin worldguard;
     
     public void convertConfig() {
     	
-    	if ( getConfig().contains("randomNames"))
+    	if ( getConfig().contains("randomNames")) //Remove randomNames from main config and create a new file, for cleanliness
     	{
     	   randomNameConfig.set("randomNames",getConfig().getStringList("randomNames"));
     	   getConfig().set("randomNames",null);
@@ -137,6 +137,7 @@ private WorldGuardPlugin worldguard;
 
     public void onEnable()
     {
+    	// Begin Setup
     	plugin = this;
         flatfile = false;
         setup = false;
@@ -163,7 +164,7 @@ private WorldGuardPlugin worldguard;
             getServer().getLogger().info("You can download the newest version at http://dev.bukkit.org/bukkit-plugins/stables/files/");
         }
         
-        if (flatfile)
+        if (flatfile) // Add a timer to save the flatfile database
         {
         	getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable()
         	{ 
@@ -181,7 +182,7 @@ private WorldGuardPlugin worldguard;
     	saveHorseConfig();
     }
     
-    public void setConfig(String line, Object set)
+    public void setConfig(String line, Object set) // Easy function to set Config options if they don't exist
     {
         if(!getConfig().contains(line))
             getConfig().set(line, set);
@@ -193,7 +194,7 @@ private WorldGuardPlugin worldguard;
             getlocalConfig().set(line, local);
     }
 
-    public void LoadConfiguration()
+    public void LoadConfiguration() // Create with defaults and/or load the config file
     {
         convertConfig();
         randomNames.clear();
@@ -377,7 +378,7 @@ private WorldGuardPlugin worldguard;
         
     }
 
-    private void checkWorldGuard()
+    private void checkWorldGuard() // See if server is using WorldGuard - for Horse recovery protections
     {
     	Plugin plug = getServer().getPluginManager().getPlugin("WorldGuard");
     	 
@@ -390,7 +391,7 @@ private WorldGuardPlugin worldguard;
         
     }
     
-    private void setupEconomy()
+    private void setupEconomy() // See if server is using Economy plugins, for stables costs
     {
     	 if (getServer().getPluginManager().getPlugin("Vault") == null) {
              return;
