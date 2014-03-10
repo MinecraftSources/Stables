@@ -1,6 +1,6 @@
-name: stables
-main: com.ivalicemud.stables.Stables
-version: 1.8.9
+name: Stables
+main: me.raum.stables.Stables
+version: 1.9.1
 author: Raum
 description: Stables-The horse protection plugin with virtual stables and much more!
 
